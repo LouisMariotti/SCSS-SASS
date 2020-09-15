@@ -1,0 +1,36 @@
+$fontFamilly: "Times New Roman", Times, serif;
+
+@mixin hoverBtn {
+  color: lightcoral;
+  background-color: whitesmoke;
+  border: none;
+}
+
+@mixin flex($direction, $background) {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: $direction;
+  background: $background;
+}
+
+header {
+  @include flex(column, beige);
+  font-family: $fontFamilly;
+  button {
+    color: whitesmoke;
+    font-family: $fontFamilly;
+    background-color: lightcoral;
+    border: none;
+    border-radius: 10px;
+    &:hover {
+      @include hoverBtn();
+    }
+  }
+}
+
+.description {
+  font-family: $fontFamilly;
+  @include flex(column, lightcoral);
+}
